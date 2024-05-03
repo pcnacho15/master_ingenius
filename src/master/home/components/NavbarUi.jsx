@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -8,12 +8,13 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-  Button,
 } from "@nextui-org/react";
 import { ToggleButton } from "../helpers/ToggleButton";
+import { useTheme } from "../../hooks/useTheme";
 
 export const NavbarUi = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const { handleChangeDarkMode, dark } = useTheme();
 
   const menuItems = ["Nosotros", "Clientes", "Servicios", "Contacto"];
 
@@ -21,7 +22,7 @@ export const NavbarUi = () => {
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="bg-none"
+      className="dark:bg-fondo-dark mt-1 rounded-sm"
     >
       <NavbarContent
         className="sm:hidden"
@@ -38,7 +39,7 @@ export const NavbarUi = () => {
       >
         <NavbarBrand>
           <img
-            src={`/src/assets/logo.jpg`}
+            src={dark ? `/src/assets/logo_white.png` : `/src/assets/logo.jpg`}
             alt="Master Ingenius"
             className="h-9"
           />
@@ -51,7 +52,7 @@ export const NavbarUi = () => {
       >
         <NavbarBrand>
           <img
-            src={`/src/assets/logo.jpg`}
+            src={dark ? `/src/assets/logo_white.png` : `/src/assets/logo.jpg`}
             alt="Master Ingenius"
             className="h-9"
           />
@@ -76,7 +77,10 @@ export const NavbarUi = () => {
 
       <NavbarContent justify="end">
         <NavbarItem>
-          <ToggleButton />
+          <ToggleButton
+            handleChangeDarkMode={handleChangeDarkMode}
+            dark={dark}
+          />
         </NavbarItem>
       </NavbarContent>
 

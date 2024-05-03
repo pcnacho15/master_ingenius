@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 // true - muestra el sol || false - muestra la luna
 const readLocalTheme = () => {
     if (JSON.parse(localStorage.getItem("theme")) === "dark") {
-        return false;
-    } else {
         return true;
+    } else {
+        return false;
     }
 };
 
@@ -24,8 +24,8 @@ export const useTheme = () => {
     const handleChangeDarkMode = () => {
         setDark(!dark);
         dark
-            ? localStorage.setItem("theme", JSON.stringify("dark"))
-            : localStorage.setItem("theme", JSON.stringify("light"));
+            ? localStorage.setItem("theme", JSON.stringify("light"))
+            : localStorage.setItem("theme", JSON.stringify("dark"));
     };
 
     return {
