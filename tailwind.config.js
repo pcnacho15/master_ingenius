@@ -14,6 +14,7 @@ export default {
       colors: {
         'fondo-logo': '#D3D3D3',
         'fondo-dark': '#3B3B3A',
+        'fondo-impo': '#00FF00',
         'naranja-logo': {
           100: '#F89E06',
           200: '#F87E18',

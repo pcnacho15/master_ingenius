@@ -2,11 +2,14 @@ import { Button } from "@nextui-org/react";
 import { Navbar } from "./Navbar";
 import { PlayIcon } from "../../icons/PlayIcon";
 import { NavbarUi } from "./NavbarUi";
+import { Banner } from "./Banner";
 
 export const Header = () => {
   return (
-    <div className="">
+    <div className="dark:bg-neutral-900">
       <header className="absolute inset-x-1 top-0 z-50">
+        {/* Banner */}
+        {/* <Banner /> */}
         {/* <Navbar /> */}
         <NavbarUi />
       </header>
