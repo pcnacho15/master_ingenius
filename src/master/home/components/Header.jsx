@@ -1,8 +1,8 @@
 import { Button } from "@nextui-org/react";
-import { Navbar } from "./Navbar";
+// import { Navbar } from "./Navbar";
 import { PlayIcon } from "../../icons/PlayIcon";
 import { NavbarUi } from "./NavbarUi";
-import { Banner } from "./Banner";
+// import { Banner } from "./Banner";
 
 export const Header = () => {
   return (

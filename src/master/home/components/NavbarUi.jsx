@@ -17,7 +17,7 @@ export const NavbarUi = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const { handleChangeDarkMode, dark } = useTheme();
 
-  const menuItems = ["Nosotros", "Clientes", "Servicios", "Contacto", "Proveedores"];
+  const menuItems = ["Nosotros", "Servicios", "Contacto", "Trabaja con nosotros"];
 
   return (
     <Navbar
@@ -77,12 +77,12 @@ export const NavbarUi = () => {
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <NavbarItem>
+        <NavbarItem className="hidden md:block">
           <Button
             color="warning"
             variant="shadow"
             size="sm"
-            className="text-white font-semibold pb-1"
+            className="text-white text-sm pb-[0.5px] font-semibold"
           >
             Contáctanos
           </Button>
@@ -106,6 +106,16 @@ export const NavbarUi = () => {
             </Link>
           </NavbarMenuItem>
         ))}
+        <NavbarItem className="w-full inline-flex items-center justify-start rounded-md p-2.5">
+          <Button
+            color="warning"
+            variant="shadow"
+            size="sm"
+            className="font-semibold text-base leading-7 text-white pb-1"
+          >
+            Contáctanos
+          </Button>
+        </NavbarItem>
       </NavbarMenu>
     </Navbar>
   );
