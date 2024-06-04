@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <footer
       id="footer"
-      className="text-sm bg-gray-200 dark:bg-neutral-900 mt-64"
+      className="text-sm bg-gray-200 dark:bg-neutral-900 mt-32"
     >
       <div className="pt-[60px] pb-[30px] px-7">
         <div className="">

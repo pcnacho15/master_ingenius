@@ -18,7 +18,8 @@ export default {
         'naranja-logo': {
           100: '#F89E06',
           200: '#F87E18',
-        }
+        },
+        'section-bg': '#f3f5fa',
       },
       animation: {
         "loop-scroll": "loop-scroll 50s linear infinite"
