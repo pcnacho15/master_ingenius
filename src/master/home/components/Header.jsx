@@ -7,11 +7,11 @@ import { NavbarUi } from "./NavbarUi";
 export const Header = () => {
   return (
     <div className="dark:bg-neutral-900">
+      <NavbarUi />
       <header className="absolute inset-x-1 top-0 z-50">
         {/* Banner */}
         {/* <Banner /> */}
         {/* <Navbar /> */}
-        <NavbarUi />
       </header>
       <div className="isolate px-6 pt-14 lg:pt-28 xl:pt-14 lg:px-8">
         <div

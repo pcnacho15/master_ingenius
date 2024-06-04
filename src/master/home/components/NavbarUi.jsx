@@ -23,7 +23,7 @@ export const NavbarUi = () => {
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="dark:bg-neutral-900 mt-1 rounded-sm fixed"
+      className=" rounded-sm fixed"
     >
       <NavbarContent
         className="sm:hidden"

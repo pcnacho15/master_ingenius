@@ -8,7 +8,7 @@ export const Contacto = () => {
 
   return (
     <div className="isolate flex justify-center bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-neutral-950">
-      <div className="bg-gray-200 dark:bg-neutral-900 w-3/6 py-9 rounded shadow-xl">
+      <div className="bg-gray-200 dark:bg-neutral-900 w-auto xl:w-3/6 px-5 py-9 rounded shadow-xl">
         <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-naranja-logo-200 uppercase sm:text-4xl">
             Contacto
