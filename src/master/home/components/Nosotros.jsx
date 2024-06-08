@@ -1,7 +1,11 @@
 import { Button } from "@nextui-org/react";
 import { CheckIcon } from "../../icons/CheckIcon";
+import { useContact } from "../../../hooks";
 
 export const Nosotros = () => {
+
+  const { handleContactWhatsApp } = useContact();
+
   return (
     <>
       <section className="mt-28 max-w-full px-6">
@@ -72,6 +76,7 @@ export const Nosotros = () => {
                 experiencias únicas que perduren en el tiempo.
               </p>
               <Button
+                onClick={handleContactWhatsApp}
                 color="warning"
                 variant="shadow"
                 size="lg"
