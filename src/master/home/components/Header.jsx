@@ -2,9 +2,12 @@ import { Button } from "@nextui-org/react";
 // import { Navbar } from "./Navbar";
 import { PlayIcon } from "../../icons/PlayIcon";
 import { NavbarUi } from "./NavbarUi";
+import { useContact } from "../../../hooks";
 // import { Banner } from "./Banner";
 
 export const Header = () => {
+
+
   return (
     <div className="dark:bg-neutral-900">
       <NavbarUi />
@@ -31,7 +34,8 @@ export const Header = () => {
             <div className="relative rounded-full px-3 py-1 text-[12px] leading-6 font-semibold text-gray-600 dark:text-gray-400 ring-1 ring-naranja-logo-100/15 hover:ring-naranja-logo-100/20">
               Contácanos para darte un acompañamiento a tus proyectos.{" "}
               <a
-                href="#"
+                href="https://wa.link/chigtk"
+                target="_blank"
                 className="font-semibold text-naranja-logo-100"
               >
                 <span
