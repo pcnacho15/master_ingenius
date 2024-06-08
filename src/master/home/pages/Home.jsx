@@ -4,20 +4,18 @@ import { Contacto } from "../components/Contacto";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 import { Nosotros } from "../components/Nosotros";
-import { Servicios } from "../components/Servicios";
+import { Servicios } from "../components/servicios";
 
 export const Home = () => {
   return (
     <>
-      <div className="">
-        <Header />
-        <ClientesSecond />
-        {/* <Clientes /> */}
-        <Nosotros />
-        <Servicios />
-        <Contacto />
-        <Footer />
-      </div>
+      <Header />
+      <ClientesSecond />
+      {/* <Clientes /> */}
+      <Nosotros />
+      <Servicios />
+      <Contacto />
+      <Footer />
     </>
   );
 };

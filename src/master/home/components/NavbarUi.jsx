@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -12,12 +12,16 @@ import {
 } from "@nextui-org/react";
 import { ToggleButton } from "../helpers/ToggleButton";
 import { useTheme } from "../../hooks/useTheme";
+import { useContact } from "../../../hooks";
 
 export const NavbarUi = () => {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { handleChangeDarkMode, dark } = useTheme();
 
+  const { handleContactWhatsApp } = useContact();
+
   const menuItems = ["Nosotros", "Servicios", "Contacto", "Trabaja con nosotros"];
+
 
   return (
     <Navbar
@@ -82,6 +86,7 @@ export const NavbarUi = () => {
             color="warning"
             variant="shadow"
             size="sm"
+            onClick={handleContactWhatsApp}
             className="text-white text-sm pb-[0.5px] font-semibold"
           >
             Contáctanos
@@ -111,6 +116,7 @@ export const NavbarUi = () => {
             color="warning"
             variant="shadow"
             size="sm"
+            onClick={handleContactWhatsApp}
             className="font-semibold text-base leading-7 text-white pb-1"
           >
             Contáctanos

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { FacebookIcon } from "../../icons/FacebookIcon";
+import { FacebookIcon } from "../../../icons/FacebookIcon";
 
 // aos animation
 import AOS from "aos";
@@ -35,7 +35,7 @@ export const Servicios = () => {
             </p>
           </div>
 
-          <div className="grid gap-6 grid-cols-4 py-20 px-5 mt-5">
+          <div className="grid gap-6 grid-cols-3 py-20 px-10 mt-5">
             <div
               className="col-span-4 md:col-span-1 flex items-stretch"
               data-aos="zoom-in"

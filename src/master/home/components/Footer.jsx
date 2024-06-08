@@ -187,7 +187,8 @@ export const Footer = () => {
               </p>
               <div className="mt-3 flex">
                 <a
-                  href="#"
+                  href="https://www.tiktok.com/@master_ingenius?_t=8mysrG7MZpW&_r=1"
+                  target="_blank"
                   className="text-lg inline-block bg-naranja-logo-100 text-white leading-3 py-[10px] px-0 mr-2 rounded-full text-center w-9 h-9 transition-all duration-400 ease-in-out hover:bg-naranja-logo-200 hover:no-underline hover:scale-125"
                 >
                   <i className="ml-[1px] grid place-content-center">
@@ -195,7 +196,8 @@ export const Footer = () => {
                   </i>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.facebook.com/share/nsBh92kZiWtgQ6Zy/?mibextid=LQQJ4d"
+                  target="_blank"
                   className="text-lg inline-block bg-naranja-logo-100 text-white leading-3 py-[10px] px-0 mr-2 rounded-full text-center w-9 h-9 transition-all duration-400 ease-in-out hover:bg-naranja-logo-200 hover:no-underline hover:scale-125"
                 >
                   <i className="ml-[1px] grid place-content-center">
@@ -203,7 +205,8 @@ export const Footer = () => {
                   </i>
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/master_ingenius?igsh=ejBpYTQ3NzNpMXgz"
+                  target="_blank"
                   className="text-lg inline-block bg-naranja-logo-100 text-white leading-3 py-[10px] px-0 mr-2 rounded-full text-center w-9 h-9 transition-all duration-400 ease-in-out hover:bg-naranja-logo-200 hover:no-underline hover:scale-125"
                 >
                   <i className="ml-[1px] grid place-content-center">
@@ -211,7 +214,8 @@ export const Footer = () => {
                   </i>
                 </a>
                 <a
-                  href="#"
+                  href="https://wa.link/chigtk"
+                  target="_blank"
                   className="text-lg inline-block bg-naranja-logo-100 text-white leading-3 py-[10px] px-0 mr-2 rounded-full text-center w-9 h-9 transition-all duration-400 ease-in-out hover:bg-naranja-logo-200 hover:no-underline hover:scale-125"
                 >
                   <i className="ml-[1px] grid place-content-center">
