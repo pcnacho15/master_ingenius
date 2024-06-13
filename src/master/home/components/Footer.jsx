@@ -9,11 +9,11 @@ export const Footer = () => {
   return (
     <footer
       id="footer"
-      className="text-sm bg-gray-200 dark:bg-neutral-900 mt-32"
+      className="text-sm bg-gray-200 dark:bg-neutral-900 mt-32 transition-all ease-in-out duration-400"
     >
       <div className="pt-[60px] pb-[30px] px-7">
         <div className="">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-14">
             <div className="col-span-1 mb-[30px]">
               <h3 className="text-2xl mb-[10px] py-[2px] uppercase font-semibold text-naranja-logo-200">
                 Master Ingenius
@@ -228,7 +228,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="flex justify-center py-[30px] text-gray-900 text-sm text-center px-3 bg-gray-300 dark:bg-neutral-950 dark:text-white">
+      <div className="flex justify-center py-[30px] text-gray-900 text-sm text-center px-3 bg-gray-300 dark:bg-neutral-950 dark:text-white transition-all ease-in-out duration-200">
         <div className="font-semibold">
           &copy; Copyright{" "}
           <strong>

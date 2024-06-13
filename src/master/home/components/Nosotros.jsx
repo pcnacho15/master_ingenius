@@ -8,11 +8,14 @@ export const Nosotros = () => {
 
   return (
     <>
-      <section className="mt-28 max-w-full px-6">
+      <section
+        id="nosotros"
+        className="mt-36 px-6"
+      >
         <div className="container mx-auto max-w-7xl">
           <div className="text-center pb-7">
             <h2
-              className="text-3xl font-bold uppercase mb-5 pb-5 relative text-naranja-logo-100 
+              className="text-3xl font-bold uppercase mb-5 pb-5 relative text-naranja-logo-200 
               before:content-[''] before:absolute before:block before:w-28 before:h-[1px] 
             before:bg-slate-200 before:bottom-[1px] before:left-[calc(50% - 60px)] before:right-[39%] sm:before:right-[41%] md:before:right-[44%] lg:before:right-[46.1%]
               after:content-[''] after:absolute after:block after:w-[40px] after:h-[3px] after:bg-naranja-logo-100 
@@ -25,12 +28,12 @@ export const Nosotros = () => {
             <div className="col-span-1">
               <p>
                 En{" "}
-                <span className="text-naranja-logo-200 font-semibold">
+                <span className="text-naranja-logo-100 font-semibold">
                   Master Ingenius
                 </span>
                 , nos dedicamos a dar vida a tus proyectos arquitectónicos con
                 un enfoque innovador y meticuloso.{" "}
-                <span className="text-naranja-logo-200 font-semibold">
+                <span className="text-naranja-logo-100 font-semibold">
                   Somos expertos en el ámbito de la construcción, remodelación y
                   diseño arquitectónico
                 </span>

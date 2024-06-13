@@ -20,14 +20,34 @@ export const NavbarUi = () => {
 
   const { handleContactWhatsApp } = useContact();
 
-  const menuItems = ["Nosotros", "Servicios", "Contacto", "Trabaja con nosotros"];
-
+  const menuItems = [
+    {
+      id: "#inicio",
+      titulo: "Inicio",
+    },
+    {
+      id: "#nosotros",
+      titulo: "Nosotros",
+    },
+    {
+      id: "#servicios",
+      titulo: "Servicios",
+    },
+    {
+      id: "#contacto",
+      titulo: "Contacto",
+    },
+    {
+      id: "#contacto",
+      titulo: "Trabaja con nosotros",
+    },
+  ];
 
   return (
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className=" rounded-sm fixed"
+      className=" rounded-sm fixed transition-all ease-in-out"
     >
       <NavbarContent
         className="sm:hidden"
@@ -44,7 +64,7 @@ export const NavbarUi = () => {
       >
         <NavbarBrand>
           <img
-            src={dark ? `/src/assets/logo_white.png` : `/src/assets/logo.jpg`}
+            src={`/src/assets/logo.jpg`}
             alt="Master Ingenius"
             className="h-9"
           />
@@ -57,7 +77,7 @@ export const NavbarUi = () => {
       >
         <NavbarBrand>
           <img
-            src={dark ? `/src/assets/logo_white.png` : `/src/assets/logo.jpg`}
+            src={`/src/assets/logo.jpg`}
             alt="Master Ingenius"
             className="h-9"
           />
@@ -69,12 +89,12 @@ export const NavbarUi = () => {
         justify="center"
       >
         {menuItems.map((item, index) => (
-          <NavbarItem key={`${item}-${index}`}>
+          <NavbarItem key={`${item.titulo}-${index}`}>
             <Link
-              href="#"
+              href={item.id}
               className="text-gray-900 dark:text-gray-100 font-semibold dark:hover:text-naranja-logo-100 hover:text-naranja-logo-100"
             >
-              {item}
+              {item.titulo}
             </Link>
           </NavbarItem>
         ))}
@@ -105,9 +125,9 @@ export const NavbarUi = () => {
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
               className="w-full inline-flex items-center justify-start rounded-md p-2.5 font-semibold leading-7 text-gray-900 hover:text-naranja-logo-100 dark:text-gray-200 hover:bg-gray-100 dark:hover:text-naranja-logo-100 dark:hover:bg-fondo-dark"
-              href="#"
+              href={item.id}
             >
-              {item}
+              {item.titulo}
             </Link>
           </NavbarMenuItem>
         ))}

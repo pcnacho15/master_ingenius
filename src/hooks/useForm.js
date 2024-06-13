@@ -7,12 +7,12 @@ export const useForm = (initialState = {}) => {
     const onInputChange = ({ target }) => {
         setFormState({
             ...formState,
-            [target.name] : target.value,
+            [target.name]: target.value,
         })
     }
 
     const onResetForm = () => {
-        setFormState( initialState );
+        setFormState(initialState);
     }
 
 
@@ -22,5 +22,5 @@ export const useForm = (initialState = {}) => {
         onInputChange,
         onResetForm,
     }
-    
+
 }

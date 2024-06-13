@@ -1,26 +1,56 @@
+import { useDispatch, useSelector } from "react-redux";
 import { Button } from "@nextui-org/react";
 import { InstagramIcon } from "../../icons/InstagramIcon";
 import { WhatsAppIcon } from "../../icons/WhatsAppIcon";
 import { useForm } from "../../../hooks";
+import { startSaveMessage } from "../../../store/master";
+import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 export const Contacto = () => {
-  const { nombre, correo, celular, mensaje, formState, onInputChange, onResetForm } =
-    useForm({
-      nombre: "",
-      correo: "",
-      celular: "",
-      mensaje: "",
-    });
+  const dispatch = useDispatch();
+  const { isSaving, messageSaved } = useSelector((state) => state.contacto);
+
+  const {
+    nombre,
+    correo,
+    celular,
+    mensaje,
+    formState,
+    onResetForm,
+    onInputChange,
+  } = useForm({
+    nombre: "",
+    correo: "",
+    celular: "",
+    mensaje: "",
+  });
+
+  useEffect(() => {
+    if (messageSaved.length > 0) {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: messageSaved,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+
+      onResetForm();
+    }
+  }, [messageSaved]);
 
   const onSubmit = (event) => {
     event.preventDefault();
-    console.log('envió');
-
+    dispatch(startSaveMessage(formState));
   };
 
   return (
-    <div className="isolate flex justify-center bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-neutral-950">
-      <div className="bg-gray-200 dark:bg-neutral-900 w-auto xl:w-3/6 px-5 py-9 rounded shadow-xl">
+    <div
+      id="contacto"
+      className="isolate flex justify-center bg-white px-6 py-24 sm:py-32 lg:px-8 dark:bg-neutral-950 transition-all ease-in-out duration-400"
+    >
+      <div className="bg-gray-200 dark:bg-neutral-900 w-auto xl:w-3/6 px-5 py-9 rounded shadow-xl transition-all ease-in-out duration-400">
         <div className="mx-auto max-w-2xl text-center">
           <h2
             className="text-3xl font-bold uppercase mb-5 pb-5 relative text-naranja-logo-200 before:content-[''] before:absolute before:block before:w-28 before:h-[1px] 
@@ -33,7 +63,7 @@ export const Contacto = () => {
           <p className="mb-0 mt-6 text-lg leading-8 text-gray-600 dark:text-gray-200">
             Nos puedes dejar tu mensaje con la duda o sugerencia que tengas, con
             gusto nuestro equipo te atenderá en el menor tiempo posible. También
-            nos puedes contactar por los siguienres medios: <br />
+            nos puedes contactar por los siguientes medios: <br />
             <br />
             <strong>Correo: info@masteringenius.com</strong>
           </p>
@@ -60,18 +90,19 @@ export const Contacto = () => {
         </div>
         <form
           onSubmit={onSubmit}
-          className="mx-auto mt-16 max-w-xl sm:mt-20"
+          className="mx-auto mt-10 max-w-xl"
         >
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div className="sm:col-span-2">
               <label
                 htmlFor="first-name"
-                className="block text-sm font-semibold leading-6 text-gray-900 dark:text-gray-200"
+                className="block text-sm font-semibold leading-6 text-gray-900 dark:text-gray-200 after:content-['_*'] after:text-red-600"
               >
                 Nombre
               </label>
               <div className="mt-2.5">
                 <input
+                  required
                   type="text"
                   name="nombre"
                   value={nombre}
@@ -85,12 +116,13 @@ export const Contacto = () => {
             <div className="sm:col-span-2">
               <label
                 htmlFor="email"
-                className="outline-none block text-sm font-semibold leading-6 text-gray-900 dark:text-gray-200"
+                className="outline-none block text-sm font-semibold leading-6 text-gray-900 dark:text-gray-200 after:content-['_*'] after:text-red-600"
               >
                 Correo
               </label>
               <div className="mt-2.5">
                 <input
+                  required
                   type="email"
                   name="correo"
                   value={correo}
@@ -133,12 +165,13 @@ export const Contacto = () => {
             <div className="sm:col-span-2">
               <label
                 htmlFor="message"
-                className="block text-sm font-semibold leading-6 text-gray-900 dark:text-gray-200"
+                className="block text-sm font-semibold leading-6 text-gray-900 dark:text-gray-200 after:content-['_*'] after:text-red-600"
               >
                 Mensaje
               </label>
               <div className="mt-2.5">
                 <textarea
+                  required
                   name="mensaje"
                   id="message"
                   value={mensaje}
@@ -152,8 +185,9 @@ export const Contacto = () => {
           <div className="mt-10">
             <Button
               type="submit"
+              isLoading={isSaving}
               variant="shadow"
-              className="block w-full rounded-md bg-naranja-logo-100 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-naranja-logo-200"
+              className="w-full rounded-md bg-naranja-logo-100 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-naranja-logo-200"
             >
               Enviar Mensaje
             </Button>

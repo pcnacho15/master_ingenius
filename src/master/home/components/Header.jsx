@@ -6,19 +6,18 @@ import { useContact } from "../../../hooks";
 // import { Banner } from "./Banner";
 
 export const Header = () => {
-
-
   return (
-    <div className="dark:bg-neutral-900">
+    <header>
       <NavbarUi />
-      <header className="absolute inset-x-1 top-0 z-50">
-        {/* Banner */}
-        {/* <Banner /> */}
-        {/* <Navbar /> */}
-      </header>
-      <div className="isolate px-6 pt-14 lg:pt-28 xl:pt-14 lg:px-8">
+      {/* Banner */}
+      {/* <Banner /> */}
+      {/* <Navbar /> */}
+      <div
+        id="inicio"
+        className="isolate px-6 pt-14 lg:pt-28 xl:pt-14 lg:px-8"
+      >
         <div
-          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80 transition-all ease-in-out duration-400"
           aria-hidden="true"
         >
           <div
@@ -68,7 +67,7 @@ export const Header = () => {
                 Ver introducción
               </Button>
               <a
-                href="#"
+                href="#nosotros"
                 className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-100 dark:hover:text-naranja-logo-100"
               >
                 Seguir leyendo <span aria-hidden="true">→</span>
@@ -89,6 +88,6 @@ export const Header = () => {
           />
         </div>
       </div>
-    </div>
+    </header>
   );
 };

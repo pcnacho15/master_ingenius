@@ -30,9 +30,6 @@ export default {
           to: { transform: "translateX(-100%)" }
         }
       },
-      grayscale: {
-        50: '80%',
-      }
     },
   },
   darkMode: 'class',
