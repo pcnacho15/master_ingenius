@@ -1,17 +1,16 @@
-import { useEffect } from "react";
-import { FacebookIcon } from "../../../icons/FacebookIcon";
+import { ServiciosItem } from "./ServiciosItem";
 
-// aos animation
-import AOS from "aos";
-import "aos/dist/aos";
-import { Button, Card, CardFooter, CardHeader, Image } from "@nextui-org/react";
+const servicios = [
+  {
+    titulo: "Porcelanato",
+    subDescripcion:
+      "Proporcionamos elegancia y durabilidad para tus superficies, con materiales de la más alta calidad que garantizan un acabado perfecto.",
+    eslogan: "Elegancia y durabilidad para tus superficies.",
+    img: "/src/assets/porcelanato.png",
+  },
+];
 
 export const Servicios = () => {
-
-    useEffect(() => {
-      AOS.init();
-    }, []);
-
   return (
     <>
       <section
@@ -53,52 +52,13 @@ export const Servicios = () => {
           </div>
 
           <div className="grid gap-6 grid-cols-3 place-content-center py-20 px-10 md:px-10 lg:px-32 mt-5">
-            <div
-              className="col-span-3 md:col-span-1 flex items-stretch"
-              data-aos="zoom-in"
-              data-aos-delay="100"
-            >
-              <Card
-                isFooterBlurred
-                className="w-full h-[300px] col-span-12 sm:col-span-7 shadow-none transition-all ease-in-out duration-400 hover:translate-y-[-10px] hover:shadow-lg"
-              >
-                <CardHeader className="absolute z-10 top-1 flex-col items-start">
-                  <p className="text-tiny text-white/60 uppercase font-bold">
-                    Your day your way
-                  </p>
-                  <h4 className="text-white/90 font-medium text-xl">
-                    Your checklist for better sleep
-                  </h4>
-                </CardHeader>
-                <Image
-                  removeWrapper
-                  alt="Relaxing app background"
-                  className="z-0 w-full h-full object-cover"
-                  src="https://nextui.org/images/card-example-5.jpeg"
-                />
-                <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-                  <div className="flex flex-grow gap-2 items-center">
-                    <Image
-                      alt="Breathing app icon"
-                      className="rounded-full w-10 h-11 bg-black"
-                      src={`/src/assets/simbolo.jpg`}
-                    />
-                    <div className="flex flex-col">
-                      <p className="text-tiny text-white/60">Master Ingenius</p>
-                      <p className="text-tiny text-white/60">
-                        Rediseño de imagen de fachada
-                      </p>
-                    </div>
-                  </div>
-                  <Button
-                    radius="full"
-                    size="sm"
-                  >
-                    Ver más
-                  </Button>
-                </CardFooter>
-              </Card>
-            </div>
+            {
+              servicios.map( (servicio, index) => (
+                  
+                  <ServiciosItem key={`${servicio.titulo}-${index}`} servicio={ servicio }/>
+
+              ))
+            }
           </div>
         </div>
       </section>
