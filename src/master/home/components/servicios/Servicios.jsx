@@ -1,14 +1,6 @@
-import { ServiciosItem } from "./ServiciosItem";
+import { ServiciosItem } from "./";
 
-const servicios = [
-  {
-    titulo: "Porcelanato",
-    subDescripcion:
-      "Proporcionamos elegancia y durabilidad para tus superficies, con materiales de la más alta calidad que garantizan un acabado perfecto.",
-    eslogan: "Elegancia y durabilidad para tus superficies.",
-    img: "/src/assets/porcelanato.png",
-  },
-];
+import { servicios } from './'
 
 export const Servicios = () => {
   return (
